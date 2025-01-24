@@ -5,7 +5,6 @@ from creators.builder import SystemConfiguration
 class UserInterface:
     @staticmethod
     def start():
-        UserInterface.welcome_banner()
         install_params = UserInterface.get_params()
         SystemConfiguration.start(*install_params)
 
