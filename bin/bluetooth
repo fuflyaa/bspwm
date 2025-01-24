@@ -4,7 +4,7 @@ goback="Back"
 
 # Checks if bluetooth controller is powered on
 power_on() {
-    if bluetoothctl show | grep -q "Powered: yes"; then
+    if timeout 5 bluetoothctl show | grep -q "Powered: yes"; then
         return 0
     else
         return 1
