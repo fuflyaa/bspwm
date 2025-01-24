@@ -226,11 +226,6 @@ toolbar#nav-bar {
   padding: 4px !important; 
 } 
 
-#urlbar { 
-  max-width: 100% !important; 
-  margin: 0 15% !important; 
-} 
-
 #urlbar-input:focus { 
   color: var(--zproger-urlbar-focused-color) !important; 
 } 
