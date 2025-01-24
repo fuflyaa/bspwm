@@ -9,7 +9,6 @@ class GraphicDrivers:
         print(f"--The function will be deleted--")
         GraphicDrivers.__prepare_multilib()
         GraphicDrivers.__update_multilib_repo()
-        GraphicDrivers.__install_hybrid_drivers()
 
     @staticmethod
     def __prepare_multilib():
