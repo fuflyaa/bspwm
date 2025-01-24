@@ -1,0 +1,45 @@
+#!/bin/bash
+
+if [ "$#" -ne 1 ]; then
+  echo "Использование: $0 <URL>"
+  exit 1
+fi
+
+URL=$1
+VIDEO_NAME=$(yt-dlp --get-title "$URL" | cut -c 1-48)
+
+# Папка для сохранения
+SAVE_DIR="$HOME/Music"
+
+# Создаем папку, если ее нет
+mkdir -p "$SAVE_DIR"
+
+# Ввод диапазона времени
+read -p "Время: " START_TIME END_TIME
+
+# Ввод громкости
+read -p "Громкость: " VOLUME_CHANGE
+
+if [ -n "$START_TIME" ] && [ -n "$END_TIME" ]; then
+  yt-dlp --add-metadata -i -o "$SAVE_DIR/1.%(ext)s" -x -f bestaudio --download-sections "*$START_TIME-$END_TIME" --audio-quality 0 --extract-audio --audio-format mp3 "$URL"
+elif [ -n "$START_TIME" ]; then
+  yt-dlp --add-metadata -i -o "$SAVE_DIR/1.%(ext)s" -x -f bestaudio --download-sections "*0-$START_TIME" --audio-quality 0 --extract-audio --audio-format mp3 "$URL"
+else
+  yt-dlp --add-metadata -i -o "$SAVE_DIR/1.%(ext)s" -x -f bestaudio --audio-quality 0 --extract-audio --audio-format mp3 "$URL"
+fi
+
+if [ ! -f "$SAVE_DIR/1.mp3" ]; then
+  echo "Ошибка: файл 1.mp3 не найден."
+  exit 1
+fi
+
+if [ -n "$VOLUME_CHANGE" ]; then
+  ffmpeg -i "$SAVE_DIR/1.mp3" -filter:a "volume=$VOLUME_CHANGE"dB "$SAVE_DIR/1_vol.mp3"
+else
+  cp "$SAVE_DIR/1.mp3" "$SAVE_DIR/1_vol.mp3"
+fi
+
+mv "$SAVE_DIR/1_vol.mp3" "$SAVE_DIR/$VIDEO_NAME.mp3"
+rm "$SAVE_DIR/1.mp3"
+
+echo "Аудио сохранено как $SAVE_DIR/$VIDEO_NAME.mp3."

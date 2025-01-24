@@ -1,0 +1,71 @@
+[colors.primary]
+foreground = "#ffffff"  # Основной цвет текста
+background = "#10111C"  # Основной цвет фона
+dim_foreground = "#908caa"  # Тусклый цвет текста
+bright_foreground = "#e0def4"  # Яркий цвет текста
+
+[colors.cursor]
+text = "#e0def4"  # Цвет текста курсора
+cursor = "#524f67"  # Цвет курсора
+
+[colors.vi_mode_cursor]
+text = "#e0def4"  # Цвет текста в режиме vi
+cursor = "#524f67"  # Цвет курсора в режиме vi
+
+[colors.search.matches]
+foreground = "#908caa"  # Цвет текста в результатах поиска
+background = "#26233a"  # Цвет фона в результатах поиска
+
+[colors.search.focused_match]
+foreground = "#191724"  # Цвет текста для выбранного результата поиска
+background = "#ebbcba"  # Цвет фона для выбранного результата поиска
+
+[colors.hints.start]
+foreground = "#908caa"  # Цвет текста подсказок (начало)
+background = "#1f1d2e"  # Цвет фона подсказок (начало)
+
+[colors.hints.end]
+foreground = "#6e6a86"  # Цвет текста подсказок (конец)
+background = "#1f1d2e"  # Цвет фона подсказок (конец)
+
+[colors.line_indicator]
+foreground = "None"  # Нет цвета для индикатора линии
+background = "None"  # Нет цвета для фона индикатора линии
+
+[colors.footer_bar]
+foreground = "#e0def4"  # Цвет текста в нижней панели
+background = "#1f1d2e"  # Цвет фона в нижней панели
+
+[colors.selection]
+text = "#e0def4"  # Цвет текста в выделении
+background = "#403d52"  # Цвет фона в выделении
+
+[colors.normal]
+black = "#26233a"  # Цвет черного
+red = "#eb6f92"  # Цвет красного
+green = "#31748f"  # Цвет зеленого
+yellow = "#f6c177"  # Цвет желтого
+blue = "#9ccfd8"  # Цвет синего
+magenta = "#c4a7e7"  # Цвет пурпурного
+cyan = "#ebbcba"  # Цвет голубого
+white = "#e0def4"  # Цвет белого
+
+[colors.bright]
+black = "#6e6a86"  # Яркий черный
+red = "#eb6f92"  # Яркий красный
+green = "#31748f"  # Яркий зеленый
+yellow = "#f6c177"  # Яркий желтый
+blue = "#9ccfd8"  # Яркий синий
+magenta = "#c4a7e7"  # Яркий пурпурный
+cyan = "#ebbcba"  # Яркий голубой
+white = "#e0def4"  # Яркий белый
+
+[colors.dim]
+black = "#6e6a86"  # Тусклый черный
+red = "#eb6f92"  # Тусклый красный
+green = "#31748f"  # Тусклый зеленый
+yellow = "#f6c177"  # Тусклый желтый
+blue = "#9ccfd8"  # Тусклый синий
+magenta = "#c4a7e7"  # Тусклый пурпурный
+cyan = "#ebbcba"  # Тусклый голубой
+white = "#e0def4"  # Тусклый белый
